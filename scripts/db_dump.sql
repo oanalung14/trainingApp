@@ -67,7 +67,15 @@ create table trainer_technology (
                                         REFERENCES technology(id)
 );
 
-
+create table user_training (
+                                    id integer AUTO_INCREMENT PRIMARY KEY,
+                                    id_user integer,
+                                    id_training integer,
+                                    FOREIGN KEY (id_user)
+                                        REFERENCES user(id),
+                                    FOREIGN KEY (id_training)
+                                        REFERENCES training(id)
+);
 
 INSERT INTO `user` (`id`, `email`, `password`, `role`) VALUES (NULL, 'maria.cotos7@yahoo.com', 'maria', '0'),
                                                               (NULL, 'oanalung14@yahoo.com', 'oana', '1'),
@@ -91,3 +99,8 @@ INSERT INTO `technology` (`id`, `name`, `type`) VALUES (NULL, 'Java', '0'),
 INSERT INTO `comment` (`id`, `id_training`, `id_user`, `comment`, `date`) VALUES (NULL, '2', '3', 'Very nice! ', '22.02.2020');
 
 INSERT INTO `trainer_technology` (`id`, `id_trainer`, `id_technology`, `details`) VALUES (NULL, '2', '1', '3 years experience in Java and Angular');
+
+
+INSERT INTO `user_training` (`id`, `id_user`, `id_training`) VALUES (NULL, '1', '1' );
+INSERT INTO `user_training` (`id`, `id_user`, `id_training`) VALUES (NULL, '2', '1' );
+INSERT INTO `user_training` (`id`, `id_user`, `id_training`) VALUES (NULL, '1', '2' );
