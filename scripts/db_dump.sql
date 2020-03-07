@@ -28,7 +28,10 @@ CREATE TABLE training (
 	 status varchar(200),
 	 details varchar(200),
 	 photo blob,
-	 max_participants integer
+	 max_participants integer,
+	 id_trainer integer,
+	 FOREIGN KEY (id_trainer)
+        REFERENCES user(id)
 );
 ALTER TABLE `training` ADD PRIMARY KEY( `id`);
 ALTER TABLE `training` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;
@@ -72,8 +75,8 @@ INSERT INTO `user_detail` (`id`, `id_user`, `first_name`, `last_name`, `departme
 																										  (NULL, '3', 'Nico', 'Viregan', 'Java', 'Junior');
 
 INSERT INTO `training` (`id`, `title`, `date`, `time`, `duration`, `location`, `status`, `details`, `photo`, `max_participants`)
-VALUES (NULL, 'Angular', '12.05.2020', '09:00 - 16:00', '2 days', 'MSG - Negreanu', 'Upcoming', 'The training is recommended for Junior or Mid developers', NULL, '15'),
-	   (NULL, 'Java', '20.02.2020', '09:00 - 17:00', '3 days', 'NTT - Socrate', 'Past ', 'Introduction in Java', NULL, 10);
+VALUES (NULL, 'Angular', '12.05.2020', '09:00 - 16:00', '2 days', 'MSG - Negreanu', 'Upcoming', 'The training is recommended for Junior or Mid developers', NULL, '15', '2'),
+	   (NULL, 'Java', '20.02.2020', '09:00 - 17:00', '3 days', 'NTT - Socrate', 'Past ', 'Introduction in Java', NULL, '10', '2');
 
 INSERT INTO `technology` (`id`, `name`, `type`) VALUES (NULL, 'Java', '0'),
 													   (NULL, 'Angular', '1'),
