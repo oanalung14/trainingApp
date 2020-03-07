@@ -143,11 +143,9 @@ span.psw {
 <div class="w3-top" style="background-color: #12065c;">
   <div class="w3-bar w3-card w3-left-align w3-large" style="background-color: #12065c;">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large " href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu" style="background-color: #12065c;"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white" >Sign in</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" style="color: white;" >Sign up</a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white" id="signIn" >Sign in</a>
-      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" style="color: white;" id="signIn" >Register</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" style="color: white;" >About us</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" style="color: white;" >Sign up</a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" style="color: white;" >About us</a>
   </div>
 
   <!-- Navbar on small screens -->
