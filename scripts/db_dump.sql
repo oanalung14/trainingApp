@@ -100,6 +100,7 @@ INSERT INTO `comment` (`id`, `id_training`, `id_user`, `comment`, `date`) VALUES
 
 INSERT INTO `trainer_technology` (`id`, `id_trainer`, `id_technology`, `details`) VALUES (NULL, '2', '1', '3 years experience in Java and Angular');
 
+
 INSERT INTO `user_training` (`id`, `id_user`, `id_training`) VALUES (NULL, '1', '1' );
 INSERT INTO `user_training` (`id`, `id_user`, `id_training`) VALUES (NULL, '2', '1' );
 INSERT INTO `user_training` (`id`, `id_user`, `id_training`) VALUES (NULL, '1', '2' );
