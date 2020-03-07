@@ -26,7 +26,7 @@
         <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large " href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu" style="background-color: #12065c;"><i class="fa fa-bars"></i></a>
         <a href="http://localhost/trainingApp/index.php" class="w3-bar-item w3-button w3-padding-large w3-white" >Sign out</a>
         <?php
-//$userid = $_GET['id'];
+$userId = $_GET['id'];
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -37,7 +37,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
 die("Connection failed: " . $conn->connect_error);
 }
-        $sql = "SELECT * FROM user_detail WHERE id='1'";
+        $sql = "SELECT * FROM user_detail WHERE id='$userId'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
 // output data of each row

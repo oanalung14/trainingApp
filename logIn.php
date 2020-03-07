@@ -29,8 +29,8 @@ if ($result->num_rows > 0) {
             header('Location: http://localhost/trainingApp/trainer/landingPage.php?id=' . $row["id"] );
          //   die();
         }
-        if( $row["role"] == "3") {
-            header('Location: http://localhost/trainingApp/admin/landingPage.php?id=' . $row["id"] );
+        if( $row["role"] == "2") {
+            header('Location: http://localhost/trainingApp/user/landingPage.php?id=' . $row["id"] );
         //    die();
         }
     }

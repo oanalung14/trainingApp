@@ -26,9 +26,40 @@
 <div class="w3-top" style="background-color: #12065c;">
     <div class="w3-bar w3-card w3-left-align w3-large" style="background-color: #12065c;">
         <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large " href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu" style="background-color: #12065c;"><i class="fa fa-bars"></i></a>
-        <a href="http://localhost/trainingApp/trainer/index.php" class="w3-bar-item w3-button w3-padding-large w3-white" >Sign out</a>
+        <a href="http://localhost/trainingApp/index.php" class="w3-bar-item w3-button w3-padding-large w3-white" >Sign out</a>
         <a href="http://localhost/trainingApp/trainer/landingPage.php?it=1" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" style="color: white;" >test trainer</a>
+        <?php
+        $userId = $_GET['id'];
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "training";
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        $sql = "SELECT * FROM user_detail WHERE id='$userId'";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+// output data of each row
+            while($row = $result->fetch_assoc()) {
+                echo "
+<ul class=\"nav navbar-nav navbar-right\">
+         <li>
+            <a href=\"#\"><span class=\"glyphicon glyphicon-user \"style=\"color: white;\"></span>
+                         <span style=\"color: white;\"> ".  $row["first_name"]. " ".  $row["last_name"]. " - Trainer </span>
+           </a>
+         </li>
+      </ul>";
+            }
+        } else {
+            echo "0 results";
+        }
 
+        $conn->close();
+        ?>
     </div>
 </div>
 <br>
