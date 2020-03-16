@@ -1,0 +1,7 @@
+{
+    "name": "faranume/training-app",
+    "require": {
+        "illuminate/database": "^7.1",
+        "illuminate/events": "^7.1"
+    }
+}
