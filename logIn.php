@@ -13,15 +13,20 @@ require_once('includes/header.php');
 ?>
 <!-- Navbar -->
 <nav class="nav">
-  <a class="nav-link" href="#" onclick="openLogIn(); return false">Sign in</a>
-  <a class="nav-link" href="#" onclick="openSignup(); return false">Sign up</a>
-  <a class="nav-link">About us</a>
+    <b><a class="nav-link" href="#" style="color: #003399" onclick="openLogIn(); return false">Sign in</a></b>
+    <b><a class="nav-link" href="#" style="color: #003399" onclick="openSignup(); return false">Sign up</a></b>
 </nav>
 
 <!-- Header -->
-<div class="jumbotron">
-  <h1 class="display-4">Training Application</h1>
-  <p class="lead">Your learning partner</p>
+<div class="jumbotron" style="background-color: #003399">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="display-4" style="color: white">Training Application</h1>
+                <p class="lead" style="color: white">Your learning partner</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="container">
@@ -31,13 +36,9 @@ require_once('includes/header.php');
       <h5>Self development is the key</h5>
       <p>We live in a world that develops constantly. To have a successful company, employees should always have the possibility to learn something new. This app makes it easier for the companies to present available trainings to the employees.
       </p>
-      <i class="fa fa-group w3-padding-64" style="font-size:150px;color:#12065c"></i>
+      <i class="fa fa-group w3-padding-64" style="font-size:100px;color:#12065c; margin-left: 900px"></i>
     </div>
   </div>
-  <div class="row">
-    <div class="col">
-      <h1>Quote of the day: let's learn something new </h1>
-    </div>
   </div>
 </div>
 
@@ -62,11 +63,6 @@ require_once('includes/header.php');
             <button onclick="loginUser(); return false">Login</button>
           </div>
         </div>
-      </div>
-      <div class="modal-footer">
-          <div class="container" style="background-color:#f1f1f1">
-            <button type="button" data-dismiss="modal" class="cancelbtn">Cancel</button>
-          </div>
       </div>
     </div>
   </div>
@@ -108,11 +104,6 @@ require_once('includes/header.php');
             <button onclick="signupUser(); return false">Sign up</button>
           </div>
         </div>
-      </div>
-      <div class="modal-footer">
-          <div class="container" style="background-color:#f1f1f1">
-            <button type="button" data-dismiss="modal" class="cancelbtn">Cancel</button>
-          </div>
       </div>
     </div>
   </div>
