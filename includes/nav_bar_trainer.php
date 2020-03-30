@@ -13,9 +13,8 @@ $userDetail = $userDetail->where('id_user', $user_id)->firstOrFail();
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $userDetail->first_name . ' ' . $userDetail->last_name ?></a>
         <div class="dropdown-menu">
             <a class="dropdown-item" href="http://localhost/trainingApp/trainerCreateTraining.php">Create training</a>
-            <a class="dropdown-item" href="http://localhost/trainingApp/trainer/joinTraining.php">Join training</a>
+            <a class="dropdown-item" href="http://localhost/trainingApp/trainerJoinTraining.php">Join training</a>
             <a class="dropdown-item" href="http://localhost/trainingApp/trainer/trainerProfile.php">Profile</a>
-            <a class="dropdown-item" href="http://localhost/trainingApp/trainer/trainerStatistics.php">Statistics</a>
             <a class="dropdown-item" href="logout.php">Logout</a>
         </div>
     </li>

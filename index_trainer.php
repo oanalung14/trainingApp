@@ -30,7 +30,6 @@ $trainingNumber = 1;
 	            <th>Description</th>
 	            <th></th>
 	            <th></th>
-	            <th></th>
 	        </tr>
 			<?php
 			if (count($trenings) == 0) { ?>
@@ -38,22 +37,23 @@ $trainingNumber = 1;
 			<?php }
 			foreach ($trenings as $trening) { ?>
 				<tr>
+                    <form method="post">
                     <td><?php echo $trainingNumber ?></td>
-                    <td><?php echo $trening->title; ?></td>
+                    <td><input class="form-control" id="id" name="id" hidden value="<?php echo $trening->id ?>"><?php echo $trening->title; ?></td>
                     <td><?php echo $trening->date; ?></td>
                     <td><?php echo $trening->time; ?></td>
                     <td><?php echo $trening->duration; ?></td>
                     <td><?php echo $trening->location; ?></td>
                     <td><?php echo $trening->status; ?></td> 
                     <td><?php echo $trening->details; ?></td>
-                    <td><button type="button" class="btn">View training</button></td>
-                    <td><button type="button" class="btn btn-primary background-color-blue" style="background-color: #003399">Edit informations</button></td>
+                    <td><button type="submit" class="btn btn-primary background-color-blue" formaction="/trainingApp/trainerEditTraining.php" style="background-color: #003399">Edit informations</button></td>
                     <?php if ($trening->status == "Upcoming"){ ?>
-                        <td><button type="button" class="btn btn-danger">Cancel training</button></td>
+                        <td><button type="submit" class="btn btn-danger" formaction="/trainingApp/trainerCancelTraining.php">Cancel training</button></td>
                     <?php }
                     else { ?>
 						<td>&nbsp;</td>
                     <?php }?>
+                    </form>
                 </tr>
 			<?php 
 				$trainingNumber++;
