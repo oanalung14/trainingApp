@@ -12,8 +12,7 @@ require_once('includes/nav_bar_trainer.php');
 
 // Showtime.
 $trenings = new Training();
-// PLS.. FOR THE LOVE OF ALL THAT'S HOLY AND NICE. Please, please, please,
-// use date comparisons!!11!!1eleventy
+
 $trenings = $trenings->all();
 $trainingNumber = 1;
 ?>
@@ -35,7 +34,7 @@ $trainingNumber = 1;
 	        </tr>
 			<?php
 			if (count($trenings) == 0) { ?>
-				0 results
+				No results were found
 			<?php }
 			foreach ($trenings as $trening) { ?>
 				<tr>
@@ -48,7 +47,7 @@ $trainingNumber = 1;
                     <td><?php echo $trening->status; ?></td> 
                     <td><?php echo $trening->details; ?></td>
                     <td><button type="button" class="btn">View training</button></td>
-                    <td><button type="button" class="btn btn-primary background-color-blue">Edit informations</button></td>
+                    <td><button type="button" class="btn btn-primary background-color-blue" style="background-color: #003399">Edit informations</button></td>
                     <?php if ($trening->status == "Upcoming"){ ?>
                         <td><button type="button" class="btn btn-danger">Cancel training</button></td>
                     <?php }
