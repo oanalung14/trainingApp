@@ -1,7 +1,7 @@
 <?php
 require_once('includes/init.php');
 @session_start();
-if (!isset($_SESSION['userData']) || $_SESSION['userData']['role'] != 0) {
+if (!isset($_SESSION['userData']) || $_SESSION['userData']['role'] != 2) {
   header('location: index.php');
 }
 
@@ -16,6 +16,9 @@ require_once('includes/nav_bar_user.php');
 $trenings = new Training();
 
 $trenings = $trenings->where('status', 'Upcoming')->get();
+
+$userTraining = new UserTraining();
+$userEnrolledTraining = $userTraining->getEnrolled($_SESSION['userData']['id']);
 ?>
 <div class="container">
 	<div class="row">
@@ -36,7 +39,9 @@ $trenings = $trenings->where('status', 'Upcoming')->get();
 			if (count($trenings) == 0) { ?>
 				0 results
 			<?php }
-			foreach ($trenings as $trening) { ?>
+			foreach ($trenings as $trening) {
+			    $remainingPlaces = $trening->max_participants - $userTraining->getEnrolledCount($trening->id);
+			    ?>
 				<tr>
                     <td><?php echo $trening->id; ?></td>
                     <td><?php echo $trening->title; ?></td>
@@ -44,10 +49,16 @@ $trenings = $trenings->where('status', 'Upcoming')->get();
                     <td><?php echo $trening->time; ?></td>
                     <td><?php echo $trening->duration; ?></td>
                     <td><?php echo $trening->location; ?></td>
-                    <td><?php echo $trening->max_participants; ?></td>
+                    <td id="places<?php echo $trening->id ?>"><?php echo $remainingPlaces; ?></td>
                     <td><?php echo $trening->details; ?></td>
                     <td><?php echo $trening->status; ?></td>
-                    <td><button type="button" class="btn btn-primary background-color-blue" style="background-color: #003399" onclick="enroll('<?php echo $trening->id ?>')">Enroll</button></td>
+                    <?php
+                        if (!in_array($trening->id, $userEnrolledTraining)) { ?>
+                    <td><button id="e<?php echo $trening->id ?>" type="button" class="btn btn-primary background-color-blue" style="background-color: #003399" onclick="enroll('<?php echo $trening->id ?>')">Enroll</button></td>
+                       <?php } else { ?>
+                    <td><button type="button" class="btn btn-primary background-color-blue" style="background-color: #003399" disabled>Enroll</button></td>
+                       <?php } ?>
+
                 </tr>
 			<?php }
 			?>

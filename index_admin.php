@@ -1,7 +1,7 @@
 <?php
 require_once('includes/init.php');
 @session_start();
-if (!isset($_SESSION['userData']) || $_SESSION['userData']['role'] != 2) {
+if (!isset($_SESSION['userData']) || $_SESSION['userData']['role'] != 0) {
   header('location: index.php');
 }
 
