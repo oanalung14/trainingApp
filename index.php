@@ -8,10 +8,10 @@ if (isset($_SESSION['userData'])) {
 			header('Location: index_trainer.php');
 			break;
 		case '2':
-			header('Location: index_admin.php');
+			header('Location: index_user.php');
 			break;
 		default:
-			header('Location: index_user.php');
+			header('Location: index_admin.php');
 			break;
 	}
 }
