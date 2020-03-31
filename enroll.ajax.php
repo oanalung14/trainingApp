@@ -25,7 +25,7 @@ if (empty($currentIdTraining)) {
 // check if the user is already enrolled  && if there are remaining places
 $userTraining = new UserTraining();
 if( !$userTraining->isAlreadyEnrolled($_SESSION['userData']['id'],$currentIdTraining )){
-    $currentTraining = Training::findOrFail($currentIdTraining);
+    $currentTraining = Training::where('id', $currentIdTraining)->where('approved', 1)->firstOrFail();
     if( $currentTraining->max_participants > $userTraining->getEnrolledCount($currentIdTraining)){
         $userTraining->id_training = $currentIdTraining;
         $userTraining->id_user = $_SESSION['userData']['id'];
