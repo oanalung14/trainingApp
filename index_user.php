@@ -15,7 +15,7 @@ require_once('includes/nav_bar_user.php');
 
 $trenings = new Training();
 
-$trenings = $trenings->where('status', 'Upcoming')->get();
+$trenings = $trenings->where('status', 'Upcoming')->where('approved', 1)->get();
 
 $userTraining = new UserTraining();
 $userEnrolledTraining = $userTraining->getEnrolled($_SESSION['userData']['id']);
