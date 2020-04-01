@@ -18,7 +18,7 @@ $location = isset($_POST['location']) ? $_POST['location'] : '';
 $duration = isset($_POST['duration']) ? $_POST['duration'] : '';
 $id_trainer = isset($_SESSION['userData']['id']);
 
-
+$training->id = $id;
 $training->title = $title;
 $training->date = $datetime;
 $training->time = $datetime;
