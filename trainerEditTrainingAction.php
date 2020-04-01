@@ -17,7 +17,6 @@ $duration = isset($_POST['duration']) ? $_POST['duration'] : '';
 $id_trainer = isset($_SESSION['userData']['id']);
 
 $training->date = $datetime;
-$training->time = $datetime;
 $training->duration = $duration;
 $training->location = $location;
 $training->max_participants = $participants;

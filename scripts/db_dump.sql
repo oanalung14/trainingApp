@@ -105,9 +105,19 @@ INSERT INTO `user_training` (`id`, `id_user`, `id_training`) VALUES (NULL, '1', 
 INSERT INTO `user_training` (`id`, `id_user`, `id_training`) VALUES (NULL, '2', '1' );
 INSERT INTO `user_training` (`id`, `id_user`, `id_training`) VALUES (NULL, '1', '2' );
 
-ALTER TABLE `training` ADD `approved` INT NOT NULL AFTER `id_trainer`;
+ALTERï¿½TABLEï¿½`training`ï¿½ADDï¿½`approved`ï¿½INTï¿½NOTï¿½NULLï¿½AFTERï¿½`id_trainer`;
 
 INSERT INTO `training` (`id`, `title`, `date`, `time`, `duration`, `location`, `status`, `details`, `photo`, `max_participants`, `id_trainer`, `approved`) VALUES (NULL, 'Communication', '12.04.2020', '11:00 - 16:00', '2 days', 'NTT - Saturn', 'Upcoming', 'Learn how to improve your communication skills', NULL, '20', '2', '0'), (NULL, 'Time management', '30.06.2020', '09:00 - 16:00', '1 day', 'NTT - Discovery', 'Upcoming', 'Time management - tips and tricks', NULL, '15', '2', '0');
 
 UPDATE `training` SET `approved` = '1' WHERE `training`.`id` = 1;
-UPDATE `training` SET `approved` = '1' WHERE `training`.`id` = 2;
+UPDATEï¿½`training`ï¿½SETï¿½`approved`ï¿½=ï¿½'1'ï¿½WHEREï¿½`training`.`id`ï¿½=ï¿½2;
+
+CREATE TABLE announcement (
+                          id integer,
+                          content varchar(200),
+                          id_training integer,
+                          FOREIGN KEY (id_training)
+                              REFERENCES training(id)
+);
+INSERT INTO `announcement` (`id`, `content`, `id_training`) VALUES (NULL, 'Please bring your laptops', '4');
+INSERT INTO `announcement` (`id`, `content`, `id_training`) VALUES (NULL, 'We will also have a special guest', '4');
