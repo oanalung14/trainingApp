@@ -21,16 +21,11 @@ $training = $training->where('id', $id)->firstOrFail();
     <b><h2 style="color:#003399; margin-left: 400px; margin-bottom: 40px "><?php echo $training->title; ?></h2></b>
     <form action="trainerEditTrainingAction.php" method="post">
         <input class="form-control" id="id" name="id" hidden value="<?php echo $training->id ?>">
-        <input class="form-control" id="descr" name="descr" hidden value="<?php echo $training->details; ?>">
         <input class="form-control" id="title" name="title" hidden value="<?php echo $training->title; ?>">
-        <div class="form-group">
-            <label for="detail">Description</label>
-            <textarea class="form-control" id="detail" rows="3"  placeholder="<?php echo $training->details; ?>"></textarea>
-        </div>
         <div class="form-group">
             <label for="participants">Number of participants</label>
             <select class="form-control" id="participants" name="participants">
-                <option value="<?php echo $training->max_participants; ?>" selected disabled hidden><?php echo $training->max_participants; ?></option>
+                <option><?php echo $training->max_participants; ?></option>
                 <option>5</option>
                 <option>10</option>
                 <option>25</option>
@@ -45,7 +40,7 @@ $training = $training->where('id', $id)->firstOrFail();
         <div class="form-group">
             <label for="location">Location</label>
             <select class="form-control" id="location" name="location" >
-                <option value="<?php echo $training->location; ?>" selected disabled hidden><?php echo $training->location; ?></option>
+                <option><?php echo $training->location; ?></option>
                 <option>MSG - Negreanu</option>
                 <option>MSG - Kilimanjaro</option>
                 <option>MSG - Fuji</option>
