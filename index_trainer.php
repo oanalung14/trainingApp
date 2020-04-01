@@ -23,12 +23,10 @@ $trainingNumber = 1;
 	            <th></th>
 	            <th>Title</th>
 	            <th>Date</th>
-	            <th>Time</th>
 	            <th>Duration</th>
 	            <th>Location</th>
 	            <th>Status</th>
 	            <th>Description</th>
-	            <th></th>
 	            <th></th>
 	        </tr>
 			<?php
@@ -41,11 +39,9 @@ $trainingNumber = 1;
                     <td><?php echo $trainingNumber ?></td>
                     <td><input class="form-control" id="id" name="id" hidden value="<?php echo $trening->id ?>"><?php echo $trening->title; ?></td>
                     <td><?php echo $trening->date; ?></td>
-                    <td><?php echo $trening->time; ?></td>
                     <td><?php echo $trening->duration; ?></td>
                     <td><?php echo $trening->location; ?></td>
                     <td><?php echo $trening->status; ?></td> 
-                    <td><?php echo $trening->details; ?></td>
                     <td><button type="submit" class="btn btn-primary background-color-blue" formaction="/trainingApp/trainerEditTraining.php" style="background-color: #003399">Edit informations</button></td>
                     <?php if ($trening->status == "Upcoming"){ ?>
                         <td><button type="submit" class="btn btn-danger" formaction="/trainingApp/trainerCancelTraining.php">Cancel training</button></td>
