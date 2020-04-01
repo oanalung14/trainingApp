@@ -104,3 +104,10 @@ INSERT INTO `trainer_technology` (`id`, `id_trainer`, `id_technology`, `details`
 INSERT INTO `user_training` (`id`, `id_user`, `id_training`) VALUES (NULL, '1', '1' );
 INSERT INTO `user_training` (`id`, `id_user`, `id_training`) VALUES (NULL, '2', '1' );
 INSERT INTO `user_training` (`id`, `id_user`, `id_training`) VALUES (NULL, '1', '2' );
+
+ALTER TABLE `training` ADD `approved` INT NOT NULL AFTER `id_trainer`;
+
+INSERT INTO `training` (`id`, `title`, `date`, `time`, `duration`, `location`, `status`, `details`, `photo`, `max_participants`, `id_trainer`, `approved`) VALUES (NULL, 'Communication', '12.04.2020', '11:00 - 16:00', '2 days', 'NTT - Saturn', 'Upcoming', 'Learn how to improve your communication skills', NULL, '20', '2', '0'), (NULL, 'Time management', '30.06.2020', '09:00 - 16:00', '1 day', 'NTT - Discovery', 'Upcoming', 'Time management - tips and tricks', NULL, '15', '2', '0');
+
+UPDATE `training` SET `approved` = '1' WHERE `training`.`id` = 1;
+UPDATE `training` SET `approved` = '1' WHERE `training`.`id` = 2;
