@@ -144,3 +144,7 @@ span.psw {
 .background-color-blue{
     background-color: #12065c;
 }
+
+.textarea-great{
+    min-height: 250px;
+}

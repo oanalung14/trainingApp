@@ -7,7 +7,7 @@ if (isset($_SESSION['userData'])) {
 
 $_add_css_to_head = array();
 $_add_js_to_footer = array(
-  'resources/login.js',
+  'resources/login.js'
 );
 require_once('includes/header.php');
 ?>
