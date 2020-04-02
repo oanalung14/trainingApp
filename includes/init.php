@@ -10,6 +10,7 @@ require_once('entities/trainer_technology.php');
 require_once('entities/user.php');
 require_once('entities/user_detail.php');
 require_once('entities/user_training.php');
+require_once('entities/notifications.php');
 
 // Namespaces.
 use Illuminate\Container\Container;
