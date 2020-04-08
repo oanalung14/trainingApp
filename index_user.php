@@ -8,6 +8,7 @@ if (!isset($_SESSION['userData']) || $_SESSION['userData']['role'] != 2) {
 $_add_css_to_head = array();
 $_add_js_to_footer = array(
 	'resources/index_user.js',
+    'resources/make_request.js'
 );
 require_once('includes/header.php');
 require_once('includes/nav_bar_user.php');

@@ -111,3 +111,12 @@ INSERT INTO `training` (`id`, `title`, `date`, `time`, `duration`, `location`, `
 
 UPDATE `training` SET `approved` = '1' WHERE `training`.`id` = 1;
 UPDATE�`training`�SET�`approved`�=�'1'�WHERE�`training`.`id`�=�2;
+
+CREATE TABLE `notifications` (
+    `id` int(30) NOT NULL AUTO_INCREMENT,
+    `id_user` int(30) NOT NULL,
+    `content` longtext NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `id_user` (`id_user`),
+    CONSTRAINT `fk_id` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
