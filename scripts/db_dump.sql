@@ -111,13 +111,3 @@ INSERT INTO `training` (`id`, `title`, `date`, `time`, `duration`, `location`, `
 
 UPDATE `training` SET `approved` = '1' WHERE `training`.`id` = 1;
 UPDATE�`training`�SET�`approved`�=�'1'�WHERE�`training`.`id`�=�2;
-
-CREATE TABLE announcement (
-                          id integer,
-                          content varchar(200),
-                          id_training integer,
-                          FOREIGN KEY (id_training)
-                              REFERENCES training(id)
-);
-INSERT INTO `announcement` (`id`, `content`, `id_training`) VALUES (NULL, 'Please bring your laptops', '4');
-INSERT INTO `announcement` (`id`, `content`, `id_training`) VALUES (NULL, 'We will also have a special guest', '4');
