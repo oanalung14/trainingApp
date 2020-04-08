@@ -18,6 +18,7 @@ $trainingNumber = 1;
 ?>
 <div class="container">
 	<div class="row">
+        <h4>All trainings created by you:</h4>
 		<table class="table table-striped">
 	        <tr>
 	            <th></th>
@@ -26,7 +27,8 @@ $trainingNumber = 1;
 	            <th>Duration</th>
 	            <th>Location</th>
 	            <th>Status</th>
-	            <th>Description</th>
+	            <th></th>
+	            <th></th>
 	            <th></th>
 	        </tr>
 			<?php
@@ -42,9 +44,10 @@ $trainingNumber = 1;
                     <td><?php echo $trening->duration; ?></td>
                     <td><?php echo $trening->location; ?></td>
                     <td><?php echo $trening->status; ?></td> 
-                    <td><button type="submit" class="btn btn-primary background-color-blue" formaction="/trainingApp/trainerEditTraining.php" style="background-color: #003399">Edit informations</button></td>
+                    <td><button type="submit" class="btn btn-primary" formaction="/trainingApp/trainerViewTraining.php" style="background-color: grey; width: 100px">View</button></td>
                     <?php if ($trening->status == "Upcoming"){ ?>
-                        <td><button type="submit" class="btn btn-danger" formaction="/trainingApp/trainerCancelTraining.php">Cancel training</button></td>
+                        <td><button type="submit" class="btn btn-primary background-color-blue" formaction="/trainingApp/trainerEditTraining.php" style="background-color: #003399; width: 100px">Edit info</button></td>
+                        <td><button type="submit" class="btn btn-danger" formaction="/trainingApp/trainerCancelTraining.php" style="width: 100px">Cancel</button></td>
                     <?php }
                     else { ?>
 						<td>&nbsp;</td>
