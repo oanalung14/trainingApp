@@ -19,6 +19,9 @@ $datetime = isset($_POST['datetime']) ? $_POST['datetime'] : '';
 $location = isset($_POST['location']) ? $_POST['location'] : '';
 $duration = isset($_POST['duration']) ? $_POST['duration'] : '';
 $id_trainer = isset($_SESSION['userData']['id']);
+
+$comments = new Comment();
+$comments = $comments->all();
 ?>
 <html>
 <head>
@@ -64,7 +67,6 @@ $id_trainer = isset($_SESSION['userData']['id']);
     </div>
     <div class="item4">
         <h2 style="font-size: 25px;"><b style="color: #003399">Announcements</b></h2>
-
         <?php if ($_SESSION['userData']['role'] == 1){ ?>
             <form action="trainerCreateAnnouncementAction.php" method="post">
                 <input class="form-control" id="id" name="id" hidden value="<?php echo $training->id ?>">
@@ -77,18 +79,31 @@ $id_trainer = isset($_SESSION['userData']['id']);
         else { ?>
             <br>
         <?php }?>
-
-
-
     </div>
+
     <div style="width: 600px" class="item5"><h2 style="font-size: 25px;"><b style="color: #003399">Comments</b></h2>
-    <form action="trainerAddCommentAction.php" method="post">
-        <input class="form-control" id="id" name="id" hidden value="<?php echo $training->id ?>">
-        <div class="form-group">
-            <textarea class="form-control" id="detail" rows="3" name="detail" placeholder="Write comment"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary background-color-blue" style="background-color: #003399">Add</button>
-    </form>
+        <form action="trainerAddCommentAction.php" method="post">
+            <input class="form-control" id="id" name="id" hidden value="<?php echo $training->id ?>">
+            <div class="form-group">
+                <textarea class="form-control" id="detail" rows="3" name="detail" placeholder="Write comment"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary background-color-blue" style="background-color: #003399">Add</button>
+        </form>
+        <br>
+        <h2 style="font-size: 25px;"><b style="color: #003399">Other comments</b></h2>
+        <?php
+        if (count($comments) == 0) { ?>
+        <?php }
+        foreach ($comments as $comment) {
+            if ($comment->id_training == $trainingId) {
+                $userName = UserDetail::find($comment->id_user);
+        ?>
+                <label for="detail" style="font-size: 20px;">From <?php echo $userName->first_name ?><?php echo $userName->last_name  ?> on <?php echo $comment->date ?> </label>
+                <input class="form-control" id="detail" rows="3" readonly name="detail" style="height: 60px" value="<?php echo $comment->comment ?>">
+        <?php
+            }
+        }
+        ?>
     </div>
 </div>
 
