@@ -1,5 +1,5 @@
 function openLogIn() {
-    $('#logInForm').modal('show');
+	header('location: loginB.php');
     return false;
 }
 
