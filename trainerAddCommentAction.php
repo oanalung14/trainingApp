@@ -10,7 +10,7 @@ $content = isset($_POST['detail']) ? $_POST['detail'] : '';
 $id_trainer = isset($_SESSION['userData']['id']);
 
 $comment = new Comment();
-$comment->id_user = $id_trainer;
+$comment->id_user = 2;
 $comment->comment = $content;
 $comment->id_training = $trainingId;
 $comment->date = date("Y-m-d");

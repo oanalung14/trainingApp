@@ -52,7 +52,7 @@ require_once('includes/nav_bar_trainer.php');
             </div>
             <div class="form-group">
                 <label for="duration">How long will it take</label>
-                <input class="form-control" id="duration" placeholder="3 hours/2 days" name="duration">
+                <input class="form-control" id="duration" placeholder="3 hours" name="duration">
             </div>
             <button type="submit" class="btn btn-primary background-color-blue" style="background-color: #003399">Submit</button>
         </form>
