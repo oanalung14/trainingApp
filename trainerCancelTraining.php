@@ -11,14 +11,20 @@ $training = Training::find($id_training);
 $training->status = 'Canceled';
 $training->save();
 
-//the subject
-$sub = "Your subject";
-//the message
-$msg = "Your message";
-//recipient email here
+$enrolledUsers = UserTraining::find($comment->id_training);
+foreach ($enrolledUsers as $user) {
+    $email = User::find($comment->email);
+
+    $sub = "Canceled Training";
+    $msg = "We are sorry to inform you that the training $training->title on $training->date was canceled";
+    $rec = $email;
+    mail($rec, $sub, $msg);
+}
+
+$sub = "Canceled Training";
+$msg = "Trainig was succesfully canceled.";
 $rec = "trainingappubb@gmail.com";
-//send email
-mail($rec,$sub,$msg);
+mail($rec, $sub, $msg);
 
 header('Location: index_trainer.php');
 die();
