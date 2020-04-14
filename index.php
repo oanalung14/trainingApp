@@ -16,5 +16,5 @@ if (isset($_SESSION['userData'])) {
 	}
 }
 else {
-	header('Location: login.php');
+	header('Location: logIn.php');
 }
