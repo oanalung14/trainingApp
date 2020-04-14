@@ -7,7 +7,7 @@ $userDetail = $userDetail->where('id_user', $user_id)->firstOrFail();
 <!-- Navbar -->
 <ul class="nav nav-tabs">
     <li class="nav-item">
-        <a class="nav-link active" href="http://localhost/trainingApp/index_admin.php">Training management</a>
+        <a class="nav-link active" href="index_admin.php">Training management</a>
     </li>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $userDetail->first_name . ' ' . $userDetail->last_name ?></a>
