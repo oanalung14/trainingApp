@@ -13,7 +13,7 @@ require_once('includes/header.php');
 ?>
 <!-- Navbar -->
 <nav class="nav">
-    <b><a class="nav-link" href="#" style="color: #003399" onclick="openLogIn(); return false">Sign in</a></b>
+    <b><a class="dropdown-item" href="loginB.php">Logout</a>/b>
     <b><a class="nav-link" href="#" style="color: #003399" onclick="openSignup(); return false">Sign up</a></b>
 </nav>
 
