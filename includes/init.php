@@ -21,10 +21,10 @@ use Illuminate\Events\Dispatcher;
 $capsule = new Capsule;
 $capsule->addConnection([
     'driver'    => 'mysql',
-    'host'      => 'localhost',
-    'database'  => 'training',
-    'username'  => 'root',
-    'password'  => '',
+    'host'      => 'ivgz2rnl5rh7sphb.chr7pe7iynqr.eu-west-1.rds.amazonaws.com',
+    'database'  => 'm7airr7e10agig1i',
+    'username'  => 'xhm5e0lxc4q8lko9',
+    'password'  => 'q8r9gm9h0mzacsyp',
     'charset'   => 'utf8',
     'collation' => 'utf8_unicode_ci',
     'prefix'    => '',
