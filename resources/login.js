@@ -1,6 +1,5 @@
 function openLogIn() {
-	$('#logInForm').modal('show');
-    return false;
+	window.location = "loginB.php";
 }
 
 function openSignup() {
